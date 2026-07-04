@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { fadeUp, staggerContainer, viewportOnce } from "@/lib/animations";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { DeviceFrame } from "@/components/ui/DeviceFrame";
+import { TABLET } from "@/lib/device";
 
 const modes = [
   {
@@ -60,8 +61,9 @@ export function InteriorApartment() {
               <DeviceFrame
                 src={mode.screenshot}
                 alt={mode.alt}
-                width={240}
-                height={480}
+                width={TABLET.landscape.width}
+                height={TABLET.landscape.height}
+                orientation="landscape"
                 className="mb-8"
               />
               <h3 className="mb-3 text-2xl font-bold text-brand-text">{mode.title}</h3>

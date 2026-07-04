@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { viewportOnce } from "@/lib/animations";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { DeviceFrame } from "@/components/ui/DeviceFrame";
+import { TABLET } from "@/lib/device";
 import { cn } from "@/lib/utils";
 
 const modes = [
@@ -63,7 +64,7 @@ export function ThreeModes() {
           {modes.map((mode, index) => (
             <motion.div
               key={mode.id}
-              className="w-[380px] shrink-0 snap-center"
+              className="w-[580px] shrink-0 snap-center"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={viewportOnce}
@@ -74,7 +75,7 @@ export function ThreeModes() {
           ))}
         </div>
 
-        {/* Mobile/Tablet: tab carousel */}
+        {/* Small screens: tab carousel */}
         <div className="lg:hidden">
           <div className="mb-8 flex justify-center gap-2">
             {modes.map((mode, index) => (
@@ -131,8 +132,9 @@ function ModeCard({ mode }: { mode: (typeof modes)[number] }) {
       <DeviceFrame
         src={mode.screenshot}
         alt={mode.alt}
-        width={240}
-        height={480}
+        width={TABLET.landscape.width}
+        height={TABLET.landscape.height}
+        orientation="landscape"
         tilt={false}
       />
     </div>

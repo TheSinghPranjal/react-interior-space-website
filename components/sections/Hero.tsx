@@ -4,13 +4,14 @@ import { useRef, useState } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { APP_NAME, LINKS, TAGLINE } from "@/lib/constants";
+import { TABLET } from "@/lib/device";
 import { fadeUp, staggerContainer } from "@/lib/animations";
 import { Button } from "@/components/ui/Button";
 import { BlueprintGrid } from "@/components/ui/BlueprintGrid";
 import { DeviceFrame } from "@/components/ui/DeviceFrame";
 import { VideoModal } from "@/components/sections/VideoModal";
 
-const badges = ["Blueprint", "Sketch", "3D", "PDF Export"];
+const badges = ["Blueprint", "Sketch", "3D", "PDF Export", "Built for Tablet"];
 
 export function Hero() {
   const ref = useRef<HTMLElement>(null);
@@ -19,8 +20,8 @@ export function Hero() {
     target: ref,
     offset: ["start start", "end start"],
   });
-  const phoneY = useTransform(scrollYProgress, [0, 1], [0, 120]);
-  const phoneScale = useTransform(scrollYProgress, [0, 1], [1, 0.92]);
+  const deviceY = useTransform(scrollYProgress, [0, 1], [0, 120]);
+  const deviceScale = useTransform(scrollYProgress, [0, 1], [1, 0.92]);
   const textY = useTransform(scrollYProgress, [0, 1], [0, 60]);
 
   return (
@@ -56,8 +57,9 @@ export function Hero() {
               className="mt-6 max-w-xl text-lg leading-relaxed text-brand-muted md:text-xl"
             >
               {APP_NAME} gives real estate agents one workspace to design rooms, annotate
-              blueprints live, preview in 3D, and export professional PDFs — replacing
-              pen-and-paper walkthroughs with confident, visual presentations.
+              blueprints live, preview in 3D, and export professional PDFs — optimized for
+              iPad and Android tablets so you can present with a full-screen canvas, not a
+              cramped phone screen.
             </motion.p>
 
             <motion.div variants={fadeUp} className="mt-8 flex flex-wrap gap-4">
@@ -85,28 +87,29 @@ export function Hero() {
           </motion.div>
 
           <motion.div
-            style={{ y: phoneY, scale: phoneScale }}
+            style={{ y: deviceY, scale: deviceScale }}
             className="relative flex justify-center lg:justify-end"
           >
-            {/* Replace /public/screenshots/hero-app.png with real app screenshot */}
+            {/* Replace /public/screenshots/hero-app.png with landscape tablet screenshot */}
             <DeviceFrame
               src="/screenshots/hero-app.png"
-              alt="Interior Space app home screen showing blueprint editor for real estate agents"
-              width={280}
-              height={560}
+              alt="Interior Space on tablet showing blueprint editor for real estate agents"
+              width={TABLET.landscape.width}
+              height={TABLET.landscape.height}
+              orientation="landscape"
               priority
-              className="lg:mr-8"
+              className="lg:mr-4"
             />
             <motion.div
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -left-4 top-1/4 hidden rounded-2xl border border-brand-green/10 bg-white p-3 shadow-xl lg:block"
+              className="absolute -left-2 top-1/4 hidden rounded-2xl border border-brand-green/10 bg-white p-3 shadow-xl lg:block"
             >
               <Image
                 src="/screenshots/screenshot-sketch-annotated.png"
-                alt="Sketch annotations on apartment blueprint"
-                width={120}
-                height={90}
+                alt="Sketch annotations on apartment blueprint on tablet"
+                width={160}
+                height={120}
                 className="rounded-lg object-cover"
               />
             </motion.div>

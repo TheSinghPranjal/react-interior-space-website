@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { fadeUp, staggerContainer, viewportOnce } from "@/lib/animations";
+import { DeviceFrame } from "@/components/ui/DeviceFrame";
+import { TABLET } from "@/lib/device";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const steps = [
@@ -92,15 +94,14 @@ export function ExportShare() {
                 className="w-full object-cover"
               />
             </div>
-            <div className="mx-auto max-w-xs">
-              <Image
-                src="/screenshots/screenshot-export-menu.png"
-                alt="Export menu showing PDF, download, and share options"
-                width={390}
-                height={844}
-                className="w-full rounded-2xl border border-brand-green/10 shadow-lg"
-              />
-            </div>
+            <DeviceFrame
+              src="/screenshots/screenshot-export-menu.png"
+              alt="Export menu on tablet showing PDF, download, and share options"
+              width={TABLET.landscape.width}
+              height={TABLET.landscape.height}
+              orientation="landscape"
+              tilt={false}
+            />
           </motion.div>
         </div>
       </div>

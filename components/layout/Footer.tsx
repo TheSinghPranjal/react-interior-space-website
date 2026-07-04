@@ -25,7 +25,8 @@ export function Footer() {
             </div>
             <p className="max-w-sm text-sm leading-relaxed text-white/60">
               The blueprint tool built for real estate. Design rooms, annotate floor plans,
-              preview in 3D, and export professional PDFs — all from one app.
+              preview in 3D, and export professional PDFs — optimized for iPad and Android
+              tablets.
             </p>
           </div>
 
@@ -54,12 +55,21 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.slice(4).map((item) => (
                 <li key={item.label}>
-                  <Link
-                    href={item.href}
-                    className="text-sm text-white/60 transition-colors hover:text-white"
-                  >
-                    {item.label}
-                  </Link>
+                  {item.href.startsWith("mailto:") ? (
+                    <a
+                      href={item.href}
+                      className="text-sm text-white/60 transition-colors hover:text-white"
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="text-sm text-white/60 transition-colors hover:text-white"
+                    >
+                      {item.label}
+                    </Link>
+                  )}
                 </li>
               ))}
               <li>

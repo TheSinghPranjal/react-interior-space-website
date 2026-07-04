@@ -1,10 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { fadeUp, staggerContainer, viewportOnce } from "@/lib/animations";
 import { LINKS } from "@/lib/constants";
+import { TABLET } from "@/lib/device";
 import { Button } from "@/components/ui/Button";
+import { DeviceFrame } from "@/components/ui/DeviceFrame";
 
 export function AIAssist() {
   return (
@@ -25,9 +26,9 @@ export function AIAssist() {
               AI Assist — design suggestions powered by intelligence
             </h2>
             <p className="mt-4 leading-relaxed text-brand-muted">
-              The AI Assist tab is already in the app — and smarter features are on the way.
-              Future updates will suggest furniture layouts, material pairings, and staging
-              ideas tailored to your unit type and buyer profile.
+              The AI Assist tab is already in the app on tablet — and smarter features are
+              on the way. Future updates will suggest furniture layouts, material pairings,
+              and staging ideas tailored to your unit type and buyer profile.
             </p>
             <div className="mt-8">
               <Button href={LINKS.notifyAI} variant="secondary">
@@ -37,16 +38,15 @@ export function AIAssist() {
           </motion.div>
 
           <motion.div variants={fadeUp} className="relative">
-            <div className="overflow-hidden rounded-2xl border border-brand-green/10 shadow-lg">
-              <Image
-                src="/screenshots/screenshot-ai-assist.png"
-                alt="AI Assist tab in Interior Space app — coming soon"
-                width={390}
-                height={844}
-                className="mx-auto w-full max-w-xs object-cover"
-              />
-            </div>
-            <div className="absolute inset-0 flex items-center justify-center rounded-2xl bg-brand-text/40 backdrop-blur-[2px]">
+            <DeviceFrame
+              src="/screenshots/screenshot-ai-assist.png"
+              alt="AI Assist tab in Interior Space on tablet — coming soon"
+              width={TABLET.landscape.width}
+              height={TABLET.landscape.height}
+              orientation="landscape"
+              tilt={false}
+            />
+            <div className="absolute inset-0 flex items-center justify-center rounded-[1.25rem] bg-brand-text/40 backdrop-blur-[2px]">
               <span className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-brand-text shadow-lg">
                 Coming Soon
               </span>

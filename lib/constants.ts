@@ -8,7 +8,7 @@ export const LINKS = {
   contactSales: "mailto:sales@interiorspace.app?subject=Contact%20Sales",
   notifyAI: "mailto:hello@interiorspace.app?subject=Notify%20me%20about%20AI%20Assist",
   waitlist: "mailto:hello@interiorspace.app?subject=Join%20Waitlist",
-  privacy: "#",
+  privacy: "/privacy",
   terms: "#",
   contact: "mailto:hello@interiorspace.app",
 } as const;

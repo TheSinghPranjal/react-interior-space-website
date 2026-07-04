@@ -12,9 +12,9 @@ const faqItems = [
       "Yes. Core design, sketch, and 3D preview features work offline. PDF export and cloud sync require a connection, but your work auto-saves locally so you never lose a presentation mid-visit.",
   },
   {
-    question: "Is it available on Android and iOS?",
+    question: "Is it available on Android and iOS tablets?",
     answer:
-      "Interior Space is available on both iOS and Android. Download from the App Store or Google Play and use the same account across devices.",
+      "Yes. Interior Space is built for iPad and Android tablets — that's where the full blueprint canvas, sketch toolbar, and 3D preview shine. Download from the App Store or Google Play. Phone is supported, but tablet is the recommended experience for site visits and client presentations.",
   },
   {
     question: "Can I share designs with clients?",

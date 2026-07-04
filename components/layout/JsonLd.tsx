@@ -6,7 +6,7 @@ export function JsonLd() {
     "@type": "SoftwareApplication",
     name: APP_NAME,
     applicationCategory: "DesignApplication",
-    operatingSystem: "iOS, Android",
+    operatingSystem: "iOS, Android (optimized for tablet)",
     description:
       "Blueprint editor, live sketch annotations, 3D preview, and PDF export for real estate agents presenting apartments to buyers.",
     offers: {
