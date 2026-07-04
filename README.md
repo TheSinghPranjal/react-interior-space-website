@@ -57,16 +57,28 @@ Replace placeholder PNGs in `public/screenshots/` with real app screenshots:
 
 ### How to capture from the Flutter app
 
-1. Run the app on emulator or device (consistent frame: iPhone 15 Pro or Pixel 7)
-2. Capture: Home, Blueprint, Sketch with annotations, 3D preview, Apartment layout, PDF export
-3. Export at 2x or 3x resolution
-4. Drop files into `public/screenshots/` keeping the same filenames
+1. Run the app on a **tablet** emulator or device — **landscape orientation** for blueprint views
+2. Recommended devices: **iPad Pro 11"** or **Samsung Galaxy Tab S9**
+3. Capture: Home, Blueprint, Sketch with annotations, 3D preview, Apartment layout, PDF export
+4. Export at **2x** resolution (e.g. 1194×834 landscape, 834×1194 portrait)
+5. Drop files into `public/screenshots/` keeping the same filenames
+
+Landscape tablet screenshots (1194×834) work best for hero, modes, and editor views. Portrait (834×1194) is fine for export menu if needed.
+
+**Images not updating after you replace a file?** Next.js caches optimized images. Run:
+
+```bash
+rm -rf .next && npm run dev
+```
+
+Then hard-refresh your browser (`Cmd+Shift+R` on Mac, `Ctrl+Shift+R` on Windows).
 
 ## Updating Copy
 
 - **App name & tagline:** `lib/constants.ts`
 - **Download / demo links:** `lib/constants.ts` → `LINKS` object
 - **Section content:** Individual files in `components/sections/`
+- **Privacy Policy:** `app/privacy/page.tsx`
 - **SEO metadata:** `app/layout.tsx` → `metadata` export
 - **Pricing tiers:** `components/sections/Pricing.tsx`
 

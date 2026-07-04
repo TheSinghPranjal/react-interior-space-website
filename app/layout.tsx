@@ -32,9 +32,9 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/screenshots/hero-app.png",
-        width: 390,
-        height: 844,
-        alt: "Interior Space app for real estate agents",
+        width: 1194,
+        height: 834,
+        alt: "Interior Space on tablet for real estate agents",
       },
     ],
     type: "website",
