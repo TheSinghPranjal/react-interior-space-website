@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# large video backups (keep only compressed demo_video.mp4)
+public/demo_video/*_backup.mp4
+public/demo_video/*_original.mp4
+public/demo_video/*_compressed.mp4
