@@ -1,5 +1,6 @@
 export const APP_NAME = "Interior Space";
 export const TAGLINE = "Turn floor plans into closing conversations.";
+export const DEMO_VIDEO_SRC = "/demo_video/demo_video.mp4";
 
 export const LINKS = {
   appStore: "https://apps.apple.com/app/interior-space",
