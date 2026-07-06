@@ -1,9 +1,23 @@
 import type { NextConfig } from "next";
 
+const isDev = process.env.NODE_ENV === "development";
+
 const nextConfig: NextConfig = {
   images: {
-    // Re-read public/ screenshots after you replace files (avoids stale optimized cache in dev)
-    minimumCacheTTL: process.env.NODE_ENV === "development" ? 0 : 86400,
+    // In dev: skip /_next/image optimizer so replaced public/ files show immediately
+    unoptimized: isDev,
+    minimumCacheTTL: isDev ? 0 : 86400,
+  },
+  async headers() {
+    if (!isDev) return [];
+    return [
+      {
+        source: "/screenshots/:path*",
+        headers: [
+          { key: "Cache-Control", value: "no-store, must-revalidate" },
+        ],
+      },
+    ];
   },
 };
 
