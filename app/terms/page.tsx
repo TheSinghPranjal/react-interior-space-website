@@ -75,7 +75,7 @@ export default function TermsPage() {
             "You are responsible for maintaining the confidentiality of your account credentials.",
             "You must provide accurate information when creating an account or subscribing.",
             "Paid subscriptions renew according to the billing terms shown at purchase unless cancelled.",
-            "Refunds are handled according to the App Store or Google Play policies where applicable.",
+            "Refunds are handled according to Google Play policies where applicable.",
           ]}
         />
       </LegalSection>

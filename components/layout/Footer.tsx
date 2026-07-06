@@ -21,8 +21,8 @@ export function Footer() {
             <Logo variant="light" size={44} className="mb-4" />
             <p className="max-w-sm text-sm leading-relaxed text-white/60">
               The blueprint tool built for real estate. Design rooms, annotate floor plans,
-              preview in 3D, and export professional PDFs — optimized for iPad and Android
-              tablets.
+              preview in 3D, and export professional PDFs — on Android tablets now, iOS
+              coming soon.
             </p>
             <div className="mt-4 space-y-1 text-sm">
               <a
@@ -91,14 +91,6 @@ export function Footer() {
                   className="text-sm text-white/60 transition-colors hover:text-white"
                 >
                   LinkedIn — {DEVELOPER.name}
-                </a>
-              </li>
-              <li>
-                <a
-                  href={LINKS.developerEmail}
-                  className="text-sm text-white/60 transition-colors hover:text-white"
-                >
-                  Developer — {DEVELOPER.email}
                 </a>
               </li>
             </ul>

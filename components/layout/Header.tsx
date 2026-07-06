@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { LINKS, NAV_ITEMS } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
+import { DownloadButton } from "@/components/ui/DownloadButton";
 import { Logo } from "@/components/ui/Logo";
 import { cn } from "@/lib/utils";
 
@@ -45,13 +46,11 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
-          <Button href={LINKS.bookDemo} variant="ghost" size="sm" className="hidden sm:inline-flex">
-            Book Demo
+        <div className="flex items-center gap-2 sm:gap-3">
+          <Button href={LINKS.contact} variant="ghost" size="sm">
+            Contact
           </Button>
-          <Button href={LINKS.appStore} variant="primary" size="sm" external>
-            Download
-          </Button>
+          <DownloadButton size="sm" showNote={false} className="hidden items-end md:flex" />
         </div>
       </div>
     </motion.header>

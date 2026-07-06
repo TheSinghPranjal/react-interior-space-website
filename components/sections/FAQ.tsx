@@ -13,9 +13,9 @@ const faqItems = [
       "Yes. Core design, sketch, and 3D preview features work offline. PDF export and cloud sync require a connection, but your work auto-saves locally so you never lose a presentation mid-visit.",
   },
   {
-    question: "Is it available on Android and iOS tablets?",
+    question: "Is it available on Android and iOS?",
     answer:
-      `Yes. ${APP_NAME} is built for iPad and Android tablets — that's where the full blueprint canvas, sketch toolbar, and 3D preview shine. Download from the App Store or Google Play. Phone is supported, but tablet is the recommended experience for site visits and client presentations.`,
+      `${APP_NAME} is built for Android tablets — we're live on Google Play soon. iOS is coming next. Phone is supported, but tablet is the recommended experience for site visits and client presentations. Contact us for early access.`,
   },
   {
     question: "Can I share designs with clients?",

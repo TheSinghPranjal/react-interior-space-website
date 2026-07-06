@@ -1,15 +1,13 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { fadeUp, staggerContainer, viewportOnce } from "@/lib/animations";
-import { APP_NAME, LINKS } from "@/lib/constants";
+import { APP_NAME, CONTACT, LINKS } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
+import { DownloadButton } from "@/components/ui/DownloadButton";
 import { BlueprintGrid } from "@/components/ui/BlueprintGrid";
 
 export function FinalCTA() {
-  const [email, setEmail] = useState("");
-
   return (
     <section className="relative overflow-hidden bg-brand-green py-24 md:py-32">
       <BlueprintGrid opacity={0.1} />
@@ -30,51 +28,24 @@ export function FinalCTA() {
             variants={fadeUp}
             className="mx-auto mt-4 max-w-2xl text-lg text-white/80"
           >
-            Download {APP_NAME} today and replace your next pen-and-paper walkthrough
-            with a visual presentation buyers remember.
+            {APP_NAME} is launching on Android first. Get in touch for pricing, demos,
+            or early access — we&apos;ll reply from {CONTACT.email}.
           </motion.p>
 
           <motion.div
             variants={fadeUp}
-            className="mt-10 flex flex-wrap items-center justify-center gap-4"
+            className="mt-10 flex flex-wrap items-center justify-center gap-6"
           >
-            <Button href={LINKS.appStore} variant="accent" size="lg" external>
-              App Store
-            </Button>
+            <DownloadButton variant="light" className="items-center" />
             <Button
-              href={LINKS.googlePlay}
+              href={LINKS.contact}
               variant="outline"
               size="lg"
-              external
               className="border-white/30 text-white hover:border-white hover:bg-white/10"
             >
-              Google Play
-            </Button>
-            <Button href={LINKS.bookDemo} variant="ghost" size="lg" className="text-white hover:bg-white/10">
-              Book a Demo
+              Contact Us
             </Button>
           </motion.div>
-
-          <motion.form
-            variants={fadeUp}
-            className="mx-auto mt-12 flex max-w-md flex-col gap-3 sm:flex-row"
-            onSubmit={(e) => {
-              e.preventDefault();
-              window.location.href = `${LINKS.waitlist}&body=Email:%20${encodeURIComponent(email)}`;
-            }}
-          >
-            <input
-              type="email"
-              placeholder="Email for waitlist updates"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="flex-1 rounded-full border border-white/20 bg-white/10 px-5 py-3 text-white placeholder:text-white/50 focus:border-white/40 focus:outline-none"
-            />
-            <Button type="submit" variant="accent" size="md">
-              Join Waitlist
-            </Button>
-          </motion.form>
         </motion.div>
       </div>
     </section>

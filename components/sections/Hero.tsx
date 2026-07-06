@@ -7,11 +7,19 @@ import { APP_NAME, LINKS, TAGLINE } from "@/lib/constants";
 import { TABLET } from "@/lib/device";
 import { fadeUp, staggerContainer } from "@/lib/animations";
 import { Button } from "@/components/ui/Button";
+import { DownloadButton } from "@/components/ui/DownloadButton";
 import { BlueprintGrid } from "@/components/ui/BlueprintGrid";
 import { DeviceFrame } from "@/components/ui/DeviceFrame";
 import { VideoModal } from "@/components/sections/VideoModal";
 
-const badges = ["Blueprint", "Sketch", "3D", "PDF Export", "Built for Tablet"];
+const badges = [
+  "Blueprint",
+  "Sketch",
+  "3D",
+  "PDF Export",
+  "Android Tablet",
+  "iOS Coming Soon",
+];
 
 export function Hero() {
   const ref = useRef<HTMLElement>(null);
@@ -57,18 +65,21 @@ export function Hero() {
               className="mt-6 max-w-xl text-lg leading-relaxed text-brand-muted md:text-xl"
             >
               {APP_NAME} gives real estate agents one workspace to design rooms, annotate
-              blueprints live, preview in 3D, and export professional PDFs — optimized for
-              iPad and Android tablets so you can present with a full-screen canvas, not a
-              cramped phone screen.
+              blueprints live, preview in 3D, and export professional PDFs — on Android
+              tablets now, with iOS on the way.
             </motion.p>
 
-            <motion.div variants={fadeUp} className="mt-8 flex flex-wrap gap-4">
-              <Button href={LINKS.appStore} size="lg" external>
-                Download App
-              </Button>
-              <Button variant="outline" size="lg" onClick={() => setVideoOpen(true)}>
-                Watch Demo
-              </Button>
+            {/* Download (coming soon) + action buttons */}
+            <motion.div variants={fadeUp} className="mt-8 space-y-4">
+              <DownloadButton />
+              <div className="flex flex-wrap gap-3">
+                <Button variant="outline" size="lg" onClick={() => setVideoOpen(true)}>
+                  Watch Demo
+                </Button>
+                <Button href={LINKS.contact} size="lg">
+                  Contact Us
+                </Button>
+              </div>
             </motion.div>
 
             <motion.div
@@ -90,7 +101,6 @@ export function Hero() {
             style={{ y: deviceY, scale: deviceScale }}
             className="relative flex justify-center lg:justify-end"
           >
-            {/* Replace /public/screenshots/hero-app.png with landscape tablet screenshot */}
             <DeviceFrame
               src="/screenshots/hero-app.png"
               alt={`${APP_NAME} on tablet showing blueprint editor for real estate agents`}

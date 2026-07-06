@@ -1,4 +1,4 @@
-import { APP_NAME, CONTACT, LINKS } from "@/lib/constants";
+import { APP_NAME, CONTACT, LINKS, STORE } from "@/lib/constants";
 
 export function JsonLd() {
   const schema = {
@@ -6,15 +6,16 @@ export function JsonLd() {
     "@type": "SoftwareApplication",
     name: APP_NAME,
     applicationCategory: "DesignApplication",
-    operatingSystem: "iOS, Android (optimized for tablet)",
+    operatingSystem: "Android (iOS coming soon)",
     description:
       "Blueprint editor, live sketch annotations, 3D preview, and PDF export for real estate agents presenting apartments to buyers.",
     offers: {
       "@type": "Offer",
       price: "0",
-      priceCurrency: "USD",
+      priceCurrency: "INR",
+      description: "Contact for pricing",
     },
-    downloadUrl: LINKS.appStore,
+    downloadUrl: STORE.googlePlay,
     contactPoint: {
       "@type": "ContactPoint",
       email: CONTACT.email,

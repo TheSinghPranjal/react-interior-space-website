@@ -11,22 +11,34 @@ export const CONTACT = {
 
 export const DEVELOPER = {
   name: "Pranjal Singh",
-  email: "pranjalsingh10061997@gmail.com",
   linkedin: "https://www.linkedin.com/in/thesinghpranjal/",
 } as const;
 
-export const LINKS = {
-  appStore: "https://apps.apple.com/app/interior-space",
+export const STORE = {
+  badge: "Available soon on Play Store & App Store",
+  note: "Android first — live on Google Play shortly. iOS coming soon.",
   googlePlay: "https://play.google.com/store/apps/details?id=com.interiorspace",
-  bookDemo: `mailto:${CONTACT.email}?subject=Book%20a%20Demo`,
-  contactSales: `mailto:${CONTACT.email}?subject=Contact%20Sales`,
-  notifyAI: `mailto:${CONTACT.email}?subject=Notify%20me%20about%20AI%20Assist`,
-  waitlist: `mailto:${CONTACT.email}?subject=Join%20Waitlist`,
+} as const;
+
+/** Build a mailto link to the primary contact inbox */
+export function mailto(subject?: string, body?: string) {
+  const params = new URLSearchParams();
+  if (subject) params.set("subject", subject);
+  if (body) params.set("body", body);
+  const query = params.toString();
+  return `mailto:${CONTACT.email}${query ? `?${query}` : ""}`;
+}
+
+export const LINKS = {
+  googlePlay: STORE.googlePlay,
+  contact: mailto(),
+  contactPricing: mailto("Pricing Inquiry — Abode Home"),
+  contactDemo: mailto("Book a Demo — Abode Home"),
+  contactGeneral: mailto("Contact — Abode Home"),
+  notifyAI: mailto("Notify me about AI Assist — Abode Home"),
   privacy: "/privacy",
   terms: "/terms",
-  contact: `mailto:${CONTACT.email}`,
   phone: CONTACT.phoneTel,
-  developerEmail: `mailto:${DEVELOPER.email}`,
   developerLinkedIn: DEVELOPER.linkedin,
 } as const;
 

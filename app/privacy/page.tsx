@@ -184,7 +184,7 @@ export default function PrivacyPolicyPage() {
         <p>Third-party services we may use include (subject to change):</p>
         <LegalList
           items={[
-            "Apple App Store / Google Play (app distribution and payments)",
+            "Google Play (app distribution and payments)",
             "Cloud hosting and database providers",
             "Optional analytics (e.g. Google Analytics), only if enabled via environment configuration",
           ]}
