@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { fadeUp, staggerContainer, viewportOnce } from "@/lib/animations";
-import { LINKS } from "@/lib/constants";
+import { APP_NAME, LINKS } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
 import { BlueprintGrid } from "@/components/ui/BlueprintGrid";
 
@@ -30,7 +30,7 @@ export function FinalCTA() {
             variants={fadeUp}
             className="mx-auto mt-4 max-w-2xl text-lg text-white/80"
           >
-            Download Interior Space today and replace your next pen-and-paper walkthrough
+            Download {APP_NAME} today and replace your next pen-and-paper walkthrough
             with a visual presentation buyers remember.
           </motion.p>
 

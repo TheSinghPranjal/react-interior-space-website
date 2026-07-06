@@ -1,4 +1,4 @@
-import { APP_NAME, LINKS } from "@/lib/constants";
+import { APP_NAME, CONTACT, LINKS } from "@/lib/constants";
 
 export function JsonLd() {
   const schema = {
@@ -15,6 +15,12 @@ export function JsonLd() {
       priceCurrency: "USD",
     },
     downloadUrl: LINKS.appStore,
+    contactPoint: {
+      "@type": "ContactPoint",
+      email: CONTACT.email,
+      telephone: CONTACT.phone,
+      contactType: "customer support",
+    },
   };
 
   return (

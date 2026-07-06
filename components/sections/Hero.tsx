@@ -93,7 +93,7 @@ export function Hero() {
             {/* Replace /public/screenshots/hero-app.png with landscape tablet screenshot */}
             <DeviceFrame
               src="/screenshots/hero-app.png"
-              alt="Interior Space on tablet showing blueprint editor for real estate agents"
+              alt={`${APP_NAME} on tablet showing blueprint editor for real estate agents`}
               width={TABLET.landscape.width}
               height={TABLET.landscape.height}
               orientation="landscape"

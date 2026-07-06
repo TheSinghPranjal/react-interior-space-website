@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { APP_NAME, LINKS } from "@/lib/constants";
+import { APP_NAME, CONTACT, LINKS } from "@/lib/constants";
 import {
   LegalList,
   LegalPageLayout,
@@ -10,11 +10,11 @@ import {
 export const metadata: Metadata = {
   title: `Privacy Policy — ${APP_NAME}`,
   description:
-    "How Interior Space collects, uses, stores, and protects your data. Clear privacy practices for our blueprint, sketch, and 3D design app.",
+    "How Abode Home collects, uses, stores, and protects your data. Clear privacy practices for our blueprint, sketch, and 3D design app.",
   openGraph: {
     title: `Privacy Policy — ${APP_NAME}`,
     description:
-      "How Interior Space handles your personal information, design data, and privacy rights.",
+      "How Abode Home handles your personal information, design data, and privacy rights.",
   },
 };
 
@@ -232,7 +232,7 @@ export default function PrivacyPolicyPage() {
           No method of transmission or storage is 100% secure. If you believe your account has
           been compromised, contact us immediately at{" "}
           <a href={LINKS.contact} className="text-brand-green hover:underline">
-            {LINKS.contact.replace("mailto:", "")}
+            {CONTACT.email}
           </a>
           .
         </p>
@@ -254,7 +254,7 @@ export default function PrivacyPolicyPage() {
         <p>
           To exercise these rights, email{" "}
           <a href={LINKS.contact} className="text-brand-green hover:underline">
-            {LINKS.contact.replace("mailto:", "")}
+            {CONTACT.email}
           </a>{" "}
           with the subject line &ldquo;Privacy Request.&rdquo; We will respond within 30 days
           where required by applicable law.
@@ -307,9 +307,16 @@ export default function PrivacyPolicyPage() {
           <p className="mt-2">
             Email:{" "}
             <a href={LINKS.contact} className="text-brand-green hover:underline">
-              {LINKS.contact.replace("mailto:", "")}
+              {CONTACT.email}
             </a>
           </p>
+          <p className="mt-2">
+            Phone:{" "}
+            <a href={LINKS.phone} className="text-brand-green hover:underline">
+              {CONTACT.phone}
+            </a>
+          </p>
+          <p className="mt-2 text-brand-muted">{CONTACT.address}</p>
           <p className="mt-2 text-sm text-brand-muted">
             For privacy-specific requests, use the subject line &ldquo;Privacy Request.&rdquo;
           </p>

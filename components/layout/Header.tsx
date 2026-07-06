@@ -3,8 +3,9 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { APP_NAME, LINKS, NAV_ITEMS } from "@/lib/constants";
+import { LINKS, NAV_ITEMS } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
+import { Logo } from "@/components/ui/Logo";
 import { cn } from "@/lib/utils";
 
 export function Header() {
@@ -30,12 +31,7 @@ export function Header() {
       )}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-6">
-        <Link href="#" className="flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-green text-sm font-bold text-white">
-            IS
-          </div>
-          <span className="text-lg font-semibold text-brand-text">{APP_NAME}</span>
-        </Link>
+        <Logo size={42} />
 
         <nav className="hidden items-center gap-8 md:flex">
           {NAV_ITEMS.map((item) => (

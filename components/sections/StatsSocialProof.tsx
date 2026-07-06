@@ -62,7 +62,7 @@ export function StatsSocialProof() {
 
   return (
     <section className="bg-white py-24 md:py-32">
-      <div className="mx-auto max-w-7xl px-4 md:px-6">
+      {/* <div className="mx-auto max-w-7xl px-4 md:px-6">
         <SectionHeading
           eyebrow="Results that matter"
           title="Trusted by agents who close"
@@ -142,7 +142,7 @@ export function StatsSocialProof() {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }

@@ -1,6 +1,6 @@
-# Interior Space — Marketing Website
+# Abode Home — Marketing Website
 
-Production-ready marketing landing page for **Interior Space**, a professional interior design and apartment blueprint tool built for real estate agents, property developers, and interior designers.
+Production-ready marketing landing page for **Abode Home**, a professional interior design and apartment blueprint tool built for real estate agents, property developers, and interior designers.
 
 Built with **Next.js 14+ (App Router)**, **TypeScript**, **Tailwind CSS**, **Framer Motion**, and **Lenis** smooth scroll. Deploy-ready for **Vercel**.
 
@@ -105,7 +105,7 @@ npx vercel --prod
 ### Custom Domain
 
 1. Vercel Dashboard → Project → **Settings** → **Domains**
-2. Add your domain (e.g. `interiorspace.app`)
+2. Add your domain (e.g. `abodehome.app`)
 3. Update DNS records as shown by Vercel
 
 ## Environment Variables
@@ -138,4 +138,4 @@ npm run lint     # ESLint via next lint
 
 ## License
 
-Private — Interior Space © 2026
+Private — Abode Home © 2026

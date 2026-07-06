@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { fadeUp, staggerContainer, viewportOnce } from "@/lib/animations";
-import { LINKS } from "@/lib/constants";
+import { APP_NAME, LINKS } from "@/lib/constants";
 import { TABLET } from "@/lib/device";
 import { Button } from "@/components/ui/Button";
 import { DeviceFrame } from "@/components/ui/DeviceFrame";
@@ -40,7 +40,7 @@ export function AIAssist() {
           <motion.div variants={fadeUp} className="relative">
             <DeviceFrame
               src="/screenshots/screenshot-ai-assist.png"
-              alt="AI Assist tab in Interior Space on tablet — coming soon"
+              alt={`AI Assist tab in ${APP_NAME} on tablet — coming soon`}
               width={TABLET.landscape.width}
               height={TABLET.landscape.height}
               orientation="landscape"

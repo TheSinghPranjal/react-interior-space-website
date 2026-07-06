@@ -1,20 +1,21 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { APP_NAME } from "@/lib/constants";
 import { fadeUp, viewportOnce } from "@/lib/animations";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Accordion } from "@/components/ui/Accordion";
 
 const faqItems = [
   {
-    question: "Does Interior Space work offline?",
+    question: `Does ${APP_NAME} work offline?`,
     answer:
       "Yes. Core design, sketch, and 3D preview features work offline. PDF export and cloud sync require a connection, but your work auto-saves locally so you never lose a presentation mid-visit.",
   },
   {
     question: "Is it available on Android and iOS tablets?",
     answer:
-      "Yes. Interior Space is built for iPad and Android tablets — that's where the full blueprint canvas, sketch toolbar, and 3D preview shine. Download from the App Store or Google Play. Phone is supported, but tablet is the recommended experience for site visits and client presentations.",
+      `Yes. ${APP_NAME} is built for iPad and Android tablets — that's where the full blueprint canvas, sketch toolbar, and 3D preview shine. Download from the App Store or Google Play. Phone is supported, but tablet is the recommended experience for site visits and client presentations.`,
   },
   {
     question: "Can I share designs with clients?",
@@ -40,7 +41,7 @@ export function FAQ() {
         <SectionHeading
           eyebrow="FAQ"
           title="Common questions from agents"
-          description="Everything you need to know before your first site visit with Interior Space."
+          description={`Everything you need to know before your first site visit with ${APP_NAME}.`}
         />
 
         <motion.div

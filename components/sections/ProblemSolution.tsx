@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { APP_NAME } from "@/lib/constants";
 import { fadeUp, slideInLeft, slideInRight, staggerContainer, viewportOnce } from "@/lib/animations";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
@@ -63,7 +64,7 @@ export function ProblemSolution() {
             className="rounded-3xl border border-brand-green/20 bg-brand-green/5 p-8 md:p-10"
           >
             <h3 className="mb-6 text-xl font-bold text-brand-green">
-              With Interior Space
+              With {APP_NAME}
             </h3>
             <ul className="space-y-4">
               {solutions.map((point) => (

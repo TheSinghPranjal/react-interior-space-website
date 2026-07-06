@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { APP_NAME } from "@/lib/constants";
 import { fadeUp, staggerContainer, viewportOnce } from "@/lib/animations";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { DeviceFrame } from "@/components/ui/DeviceFrame";
@@ -42,7 +43,7 @@ export function InteriorApartment() {
         <SectionHeading
           eyebrow="Two ways to work"
           title="One room or the whole apartment"
-          description="Whether you're staging a studio or presenting a penthouse, Interior Space scales with your listing."
+          description={`Whether you're staging a studio or presenting a penthouse, ${APP_NAME} scales with your listing.`}
         />
 
         <motion.div

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { APP_NAME } from "@/lib/constants";
 import { fadeUp, staggerContainer, viewportOnce } from "@/lib/animations";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
@@ -34,7 +35,7 @@ export function WhoItsFor() {
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <SectionHeading
           eyebrow="Built for professionals"
-          title="Who Interior Space is for"
+          title={`Who ${APP_NAME} is for`}
           description="One app, three professions — all united by the need to show spaces clearly and close with confidence."
         />
 

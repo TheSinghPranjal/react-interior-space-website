@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { APP_NAME, LINKS } from "@/lib/constants";
 import { fadeUp, staggerContainer, viewportOnce } from "@/lib/animations";
-import { LINKS } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { cn } from "@/lib/utils";
@@ -12,7 +12,7 @@ const tiers = [
     name: "Free",
     price: "$0",
     period: "forever",
-    description: "Try Interior Space with core room design tools.",
+    description: `Try ${APP_NAME} with core room design tools.`,
     features: [
       "1 room per project",
       "Basic blueprint editor",
@@ -77,7 +77,7 @@ export function Pricing() {
           title="Plans that scale with your listings"
           description="Start free, upgrade when you're ready to present like a pro."
         />
-
+{/* 
         <motion.div
           className="grid gap-8 lg:grid-cols-3"
           variants={staggerContainer}
@@ -133,8 +133,8 @@ export function Pricing() {
               </Button>
             </motion.div>
           ))}
-        </motion.div>
-
+        </motion.div> */}
+{/* 
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -168,7 +168,7 @@ export function Pricing() {
               ))}
             </tbody>
           </table>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

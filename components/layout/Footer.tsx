@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { APP_NAME, LINKS, NAV_ITEMS } from "@/lib/constants";
+import { APP_NAME, CONTACT, DEVELOPER, LINKS, NAV_ITEMS, TAGLINE } from "@/lib/constants";
+import { Logo } from "@/components/ui/Logo";
 
 const footerLinks = [
   { label: "Features", href: "#features" },
@@ -17,17 +18,27 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-16 md:px-6">
         <div className="grid gap-12 md:grid-cols-4">
           <div className="md:col-span-2">
-            <div className="mb-4 flex items-center gap-2">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-green text-sm font-bold text-white">
-                IS
-              </div>
-              <span className="text-lg font-semibold text-white">{APP_NAME}</span>
-            </div>
+            <Logo variant="light" size={44} className="mb-4" />
             <p className="max-w-sm text-sm leading-relaxed text-white/60">
               The blueprint tool built for real estate. Design rooms, annotate floor plans,
               preview in 3D, and export professional PDFs — optimized for iPad and Android
               tablets.
             </p>
+            <div className="mt-4 space-y-1 text-sm">
+              <a
+                href={LINKS.contact}
+                className="block text-white/60 transition-colors hover:text-white"
+              >
+                {CONTACT.email}
+              </a>
+              <a
+                href={LINKS.phone}
+                className="block text-white/60 transition-colors hover:text-white"
+              >
+                {CONTACT.phone}
+              </a>
+              <p className="text-white/60">{CONTACT.address}</p>
+            </div>
           </div>
 
           <div>
@@ -74,22 +85,20 @@ export function Footer() {
               ))}
               <li>
                 <a
-                  href="https://twitter.com"
+                  href={LINKS.developerLinkedIn}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-white/60 transition-colors hover:text-white"
                 >
-                  Twitter / X
+                  LinkedIn — {DEVELOPER.name}
                 </a>
               </li>
               <li>
                 <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={LINKS.developerEmail}
                   className="text-sm text-white/60 transition-colors hover:text-white"
                 >
-                  LinkedIn
+                  Developer — {DEVELOPER.email}
                 </a>
               </li>
             </ul>
@@ -100,7 +109,7 @@ export function Footer() {
           <p className="text-sm text-white/40">
             © {new Date().getFullYear()} {APP_NAME}. All rights reserved.
           </p>
-          <p className="text-sm text-white/40">Design. Visualize. Sell.</p>
+          <p className="text-sm text-white/40">{TAGLINE}</p>
         </div>
       </div>
     </footer>
